@@ -83,7 +83,7 @@ function updateWinnerPrizeToDb () {
         type: "PUT",
         async: false,
         cache: false,
-        data: winnerPrizeArr,
+        data: JSON.stringify(winnerPrizeArr),
         dataType: "json",
         timeout: 30000,
         error: function(){

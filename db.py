@@ -106,7 +106,7 @@ class RegisterDB(DB):
 		self.coll.remove({"alias": alias})
 
 	def list(self):
-		memberList = self.coll.find()
+		memberList = self.coll_luckydraw.find()
 		testList = list(memberList)
 		for x in testList:
 			del x["_id"]

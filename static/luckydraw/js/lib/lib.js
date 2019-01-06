@@ -23,7 +23,7 @@ function getdbData () {
             rawData = [];
         },
         success: function(msg){
-            rawData = msg;
+            rawData = JSON.parse(msg);
             candidates = [];
             console.log("raw: " + rawData);
             for (const member of rawData) {

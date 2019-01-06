@@ -51,8 +51,18 @@ def login():
 def luckyDraw():
     return render_template("luckydraw.html")
 
-@app.route("/getdbData")
-def getdata():
-    resp = rdb.list()
-    return resp
+@app.route("/luckydraw/data",methods=['GET','PUT'])
+def dbData():
+    if request.method == 'GET':
+        resp = rdb.list()
+        return resp
+    elif request.method == 'PUT':
+        if not request.json:
+            return '404'
+        else:
+            print('req data:{0}'.format(len(request.json)))
+            for d in request.json:
+                rdb.updateDB(d['alias'],d['isWinner'])
+            return '200'
     # print(rdb.list)
+

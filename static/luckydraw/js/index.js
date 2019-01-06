@@ -9,7 +9,7 @@ var luckyMan = [];
 var timer;//定时器
 var times = 1;//抽奖次数,如果不是第一次，不加粗显示领导姓名
 $(function () {
-    getdbData();
+    drawWinner('prize99');
     iconAnimation();
     //开始抽奖
     $("#btnStart").on("click", function () {
@@ -76,6 +76,7 @@ function startLuckDraw() {
         return false;
     }
     //随机中奖人
+
     var randomPerson = getRandomArrayElements(remainPerson, luckyDrawNum);
     var tempHtml = "";
     $.each(randomPerson, function (i, person) {

@@ -17,6 +17,7 @@ class DB():
 	password = os.environ['password']
 	dbName = os.environ['dbName']
 	collName = os.environ['collName']
+	collName_luckydraw = os.environ['collName_luckydraw']
     # mongoUrl = config.get('DB','mongoUrl')
     # print(mongoUrl)
     # name = config.get('DB','name')
@@ -27,13 +28,14 @@ class DB():
 	client = None
 	db = None
 	coll = None
-
+	coll_luckydraw = None
+	
 	def connect(self):
 		self.client = MongoClient(self.mongoUrl) # host uri 
 		self.db = self.client[self.dbName] # Select the database
 		self.db.authenticate(name=self.name,password=self.password)
 		self.coll = self.db[self.collName]
-
+		self.coll_luckydraw = self.db[self.collName_luckydraw]
 	def close(self):
 		self.client.close()
 
@@ -97,7 +99,6 @@ class RegisterDB(DB):
 		mail = RegisterMail(newMember)
 		mail.send()
 		print('register done')
-
 	def login(self, alias):
 		print('login done')
 
@@ -113,7 +114,12 @@ class RegisterDB(DB):
 		print(testList)
 		#for m in memberList: print(m)
 		return testList
-
+	def updateDB(self,alias,isWinner):
+		try:
+			self.coll_luckydraw.update({'alias':alias},{'$set':{'isWinner':isWinner}})
+			print('success in updating')
+		except Exception as e:
+			print('fail in updating'+str(e))
 """
 	# test case
 	member = Member('real-aaa', 'aaa', 'bbb@mail.com', 'apple', 'onefriend')

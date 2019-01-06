@@ -109,11 +109,11 @@ class RegisterDB(DB):
 		for m in memberList: print(m)
 		return memberList
 
-	"""
+"""
 	# test case
 	member = Member('real-aaa', 'aaa', 'bbb@mail.com', 'apple', 'onefriend')
 	rdb = RegisterDB()
 	rdb.add(member)
 	rdb.list()
 	print('end')
-	"""
+"""

@@ -43,7 +43,7 @@ def test():
 def login():
    if "alias" in request.args:
     #   rdb.login(request.args.get("alias"))
-      return "Log in!"
+      return "不要偷Scan QRCode lah!"
    else:
       return "Failed to log in!"
 

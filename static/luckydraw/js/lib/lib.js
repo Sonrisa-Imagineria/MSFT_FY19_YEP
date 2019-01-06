@@ -7,7 +7,7 @@ PrizeWinnerNumMapping = {
 
 function getdbData () {
     $.ajax({
-        url: "https://localhost:5000/getdbData",
+        url: "http://localhost:5000/getdbData",
         type: 'GET',
         async: false,
         cache: false,
@@ -26,7 +26,7 @@ function getdbData () {
             }
         }
     });
-    return list
+    // return list
 }
 
 function randomList (list, num) {

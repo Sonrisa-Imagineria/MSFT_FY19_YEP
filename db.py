@@ -106,8 +106,13 @@ class RegisterDB(DB):
 
 	def list(self):
 		memberList = self.coll.find()
-		for m in memberList: print(m)
-		return memberList
+		testList = list(memberList)
+		for x in testList:
+			del x["_id"]
+		testList = json.dumps(testList)
+		print(testList)
+		#for m in memberList: print(m)
+		return testList
 
 """
 	# test case

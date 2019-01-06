@@ -53,5 +53,6 @@ def luckyDraw():
 
 @app.route("/getdbData")
 def getdata():
-    rdb.list()
+    resp = rdb.list()
+    return resp
     # print(rdb.list)

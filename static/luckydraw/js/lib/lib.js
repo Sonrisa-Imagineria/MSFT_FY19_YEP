@@ -74,10 +74,13 @@ function drawWinnerForPrize (prizeName) {
             "isWinner" : prizeName
         });
     }
+    console.log("drawWinnerForPrize:"+winnerPrizeArr);
 }
+
 
 function updateWinnerPrizeToDb () {
     var res = false;
+    console.log("updateWinnerPrize2db:stringify="+JSON.stringify(winnerPrizeArr));
     $.ajax({
         url: AJAX_URL,
         type: "PUT",

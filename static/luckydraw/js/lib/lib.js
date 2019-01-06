@@ -88,6 +88,7 @@ function updateWinnerPrizeToDb () {
         cache: false,
         data: JSON.stringify(winnerPrizeArr),
         dataType: "json",
+        contentType: "application/json",
         timeout: 30000,
         error: function(){
             console.log("Failed to update winner");

@@ -87,7 +87,6 @@ function updateWinnerPrizeToDb () {
         async: false,
         cache: false,
         data: JSON.stringify(winnerPrizeArr),
-        dataType: "json",
         contentType: "application/json",
         timeout: 30000,
         error: function(){

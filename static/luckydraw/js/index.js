@@ -10,6 +10,7 @@ var timer;//定时器
 var times = 1;//抽奖次数,如果不是第一次，不加粗显示领导姓名
 $(function () {
     drawWinner('prize99');
+    redrawWinner('prize99','yvshih');
     iconAnimation();
     //开始抽奖
     $("#btnStart").on("click", function () {

@@ -46,7 +46,7 @@ function randomList (num) {
         newCandidates.push(cand);
     }
     candidates = newCandidates;
-    console.log("random winnterList:" + winnterList);
+    console.log("random winnerList:" + winnerList);
 }
 
 function drawWinnerForPrize (prizeName) {

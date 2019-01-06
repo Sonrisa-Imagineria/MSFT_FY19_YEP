@@ -39,7 +39,7 @@ function getdbData () {
 function randomList (num) {
     var newCandidates = [];
 
-    if (num > candidate.length) {
+    if (num > candidates.length) {
         console.log("Failed to random because candidates are too less");
         return ;
     }
@@ -92,8 +92,6 @@ function updateWinnerPrizeToDb () {
         },                
         success:function(data) {
             console.log("update success: " + data);
-            var newRawData = [];
-            for (const member of rawData)
             res = true;
         }
     });

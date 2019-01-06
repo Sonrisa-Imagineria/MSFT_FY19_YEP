@@ -25,9 +25,11 @@ function getdbData () {
         success: function(msg){
             rawData = msg;
             candidates = [];
+            console.log("raw: " + rawData);
             for (const member of rawData) {
+                console.log("member: " + member);
                 var alias = member["alias"];
-                console.log("add " + alias + "to candidate list");
+                console.log("add " + alias + " to candidate list");
                 candidates.push(alias);
             }
         }

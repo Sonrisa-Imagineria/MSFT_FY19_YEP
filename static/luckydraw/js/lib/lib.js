@@ -7,7 +7,7 @@ var winnerList = [];
 var winnerPrizeArr = [];
 var PrizeNumMapping = {
     "prize1" : 1,
-    "prize99" : 10
+    "prize99" : 3
 };
 
 function getdbData () {
@@ -36,6 +36,11 @@ function getdbData () {
 
 function randomList (num) {
     var newCandidates = [];
+
+    if (num > candidate.length) {
+        console.log("Failed to random because candidates are too less");
+        return ;
+    }
 
     winnerList = getRandomArrayElements(candidates, num);
     // remove winners from candidates

@@ -7,7 +7,7 @@ PrizeWinnerNumMapping = {
 
 function getdbData () {
     $.ajax({
-        url: "http://luckydraw.azurewebsites.net/getdbData",
+        url: "https://luckydraw.azurewebsites.net/getdbData",
         type: 'GET',
         async: false,
         cache: false,

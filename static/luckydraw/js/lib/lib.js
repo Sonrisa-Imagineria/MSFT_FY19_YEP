@@ -159,6 +159,14 @@ function redrawWinner (prizeName, redrawAlias) {
     }
 }
 
+function randomName(){
+    var $showName = $("#showName"); //显示内容的input的ID
+    var interTime = 30;//设置间隔时间
+    timer = setInterval(function () {
+        var i = GetRandomNum(0, candidates.length);
+        $showName.val(candidates[i]);//输入框赋值
+    }, interTime);
+}
 $(document).ready(function() {
     
     $('.slider_circle_10').EasySlides({
@@ -167,6 +175,9 @@ $(document).ready(function() {
     })
 
     $('#drawit').on('click', function(){
+        $("#result").fadeOut();
+        $("#luckyDrawing").show().next().addClass("hide");
+        randomName();
         console.log('draw it...');
         var classactive = $('.active');
         var pid = classactive.attr('pid');//works

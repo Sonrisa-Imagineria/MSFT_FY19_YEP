@@ -214,9 +214,5 @@ $(document).ready(function() {
         console.log('draw it...');
         
     });
-
-    $('.card-block').on(click, function(){
-        
-    });
 });
 

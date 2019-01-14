@@ -164,7 +164,7 @@ body {
 }
 
 body > div {
-    background: url(img/bg.png) no-repeat;
+    /* background: url(img/bg.png) no-repeat; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -331,6 +331,12 @@ body > div > footer > div > button#btnStart {
     width: 361px;
     margin-right: 16px;
     color: white;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
 }
 
 body > div > footer > div > button#btnReset {

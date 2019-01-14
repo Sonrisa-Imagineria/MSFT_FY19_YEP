@@ -7,6 +7,7 @@ var winnerList = [];
 var winnerPrizeArr = [];
 var PrizeNumMapping = {
     "prize1" : 1,
+    "prize2" : 10,
     "prize99" : 3
 };
 
@@ -157,3 +158,23 @@ function redrawWinner (prizeName, redrawAlias) {
         return;
     }
 }
+
+$(document).ready(function() {
+    
+    $('.slider_circle_10').EasySlides({
+        'autoplay': false,
+        'show': 3
+    })
+
+    $('#drawit').on('click', function(){
+        console.log('draw it...');
+        var classactive = $('.active');
+        var pid = classactive.attr('pid');//works
+        drawWinner(pid);
+        // var activeproduct =  $('div.active').getAttribute('pid');
+        console.log('drawit attr:%s',pid);
+        // drawWinner()
+    });
+
+});
+

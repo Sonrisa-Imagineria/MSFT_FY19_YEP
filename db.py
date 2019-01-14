@@ -100,7 +100,10 @@ class RegisterDB(DB):
 		mail.send()
 		print('register done')
 	def login(self, alias):
-		print('login done')
+		infos = self.coll.find({"alias":alias})
+		for info in infos:
+			print(info)
+		return info
 
 	def remove(self, alias):
 		self.coll.remove({"alias": alias})

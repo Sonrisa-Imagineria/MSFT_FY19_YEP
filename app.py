@@ -32,7 +32,7 @@ def test():
       accompany = request.args.get("accompany")
       greeting = request.args.get("greeting")
       try:
-        #   rdb.register(name, alias, department, email, cuisine, accompany, greeting)
+          rdb.register(name, alias, department, email, cuisine, accompany, greeting)
           return render_template("successful.html")
       except:
           print('failed in register')
@@ -42,15 +42,24 @@ def test():
 @app.route("/login")
 def login():
    if "alias" in request.args:
-    #   rdb.login(request.args.get("alias"))
-      return "不要偷Scan QRCode lah!"
+      print('lohin')
+      try:
+        result = rdb.login(request.args.get("alias"))
+        print('after finding...')
+        print(result)
+        return render_template("login.html",obj=result)
+      except:
+        result = {'name':request.args.get("alias"),'accompany':''}
+        return render_template("login.html",obj=result)
    else:
       return "Failed to log in!"
 
 @app.route("/luckydraw")
 def luckyDraw():
     return render_template("luckydraw.html")
-
+@app.route("/luckydrawtest")
+def luckyDrawtest():
+    return render_template("luckydraw_test.html")
 @app.route("/luckydraw/data",methods=['GET','PUT'])
 def dbData():
     if request.method == 'GET':

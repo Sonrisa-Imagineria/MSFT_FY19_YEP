@@ -11,6 +11,8 @@
     <script src="/static/luckydraw/js/lib/lib.js"></script>
     <script src="/static/luckydraw/js/index.js"></script>
     <!-- TEST EASY SLIDES -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link href="{{ url_for('static', filename='luckydraw/css/jquery.easy_slides.css') }}" rel="stylesheet" type="text/css" />
 
     <script src="/static/luckydraw/js/lib/jquery.easy_slides.js"></script>
@@ -18,10 +20,10 @@
 </head>
 <body>
     <div>
-        <header>
+
             <div class="slider slider_circle_10">
-                <div>1</div>
-                <div>2</div>
+                <div pid="prize1">1</div>
+                <div pid="prize2">2</div>
                 <div>3</div>
                 <div>4</div>
                 <div>5</div>
@@ -41,26 +43,25 @@
                 <!-- <div class="next_button"></div>
                 <div class="prev_button"></div> -->
             </div>
-        </header>
-        <section>
+
             <div class="hide" id="luckyDrawing"><input id="showName" readonly type="text"></div>
             <div class="hide" id="result">
                 <div></div>
             </div>
-        </section>
-        <footer>
+
             <div>
-                <input type="number" id="txtNum" value="" placeholder="请输入中奖人数">
+                <button type="button" id="drawit" class="btn btn-info">抽獎！</button>
+                <button type="button" class="btn btn-info">再抽一次</button>
+                <!-- <input type="number" id="txtNum" value="" placeholder="请输入中奖人数">
                 <button id="btnStart">开始</button>
-                <button id="btnReset">&nbsp;</button>
+                <button id="btnReset">&nbsp;</button> -->
             </div>
-        </footer>
     
     </div>
-    <div id="bgLuckyDrawEnd"></div>
+    <!-- <div id="bgLuckyDrawEnd"></div>
     <div id="iconDiv" class="animated fadeIn"><span><img src="css/img/icon/01.png"> </span><span><img
             src="css/img/icon/02.png"> </span><span><img src="css/img/icon/03.png"> </span><span><img
             src="css/img/icon/04.png"> </span><span><img src="css/img/icon/05.png"> </span><span><img
             src="css/img/icon/06.png"> </span></div>
-    </body>
+    </body> -->
 </html>

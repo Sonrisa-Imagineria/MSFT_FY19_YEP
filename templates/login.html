@@ -1,0 +1,26 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+        {% if not obj['accompany'] %}
+        <br><br> <h2 style="color: #b82044;">Failed</h2>
+        <h3>Dear, {{ obj['name'] }}</h3>
+        <p style="font-size:20px;color:#5C5C5C;"> 糟糕我們沒找到你的報名資料耶 </p>
+        <p style="font-size:20px;color:#5C5C5C;"> 麻煩找工作人員協助處理 </p>
+
+        {% else %}
+        <br><br> <h2 style="color:#0fad00">Success</h2>
+        <h3>Dear, {{ obj['name'] }}</h3>
+        <p style="font-size:20px;color:#5C5C5C;"> 歡迎參加微軟三十尾牙 </p>
+        <p style="font-size:20px;color:#5C5C5C;"> 共 {{obj['accompany']}} 人參加 </p>
+        {% endif %}
+                
+        
+    <br><br>
+        </div>
+        
+	</div>
+</div>

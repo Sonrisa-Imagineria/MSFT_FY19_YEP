@@ -171,6 +171,7 @@ body > div {
     margin: -300px auto auto -400px;
     width: 800px;
     height: 600px;
+    overflow: scroll;
 }
 
 body > div > header {

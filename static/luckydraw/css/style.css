@@ -347,3 +347,12 @@ body > div > footer > div > button#btnReset {
     padding: 0;
     display: inline-block;
 }
+
+.card-block
+{
+    background-image: url(/static/images/absent.jpg);
+    background-size: cover;
+    margin-left: 10%;
+    height: 85%;
+    width: 85%;
+}

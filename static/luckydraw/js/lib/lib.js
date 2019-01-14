@@ -210,7 +210,7 @@ $(document).ready(function() {
         setTimeout(function(){
             clearInterval(timer);
             $("#showName").hide();
-        }, 10000);
+        }, 3000);
         console.log('draw it...');
         
     });

@@ -176,18 +176,19 @@ $(document).ready(function() {
         'autoplay': false,
         'show': 3
     })
-
+    getdbData();
     $('#drawit').on('click', function(){
-        console.log('draw it...');
-        var classactive = $('.active');
-        var pid = classactive.attr('pid');//works
-        drawWinner(pid);
+        
         $("#result").fadeOut();
         $("#luckyDrawing").show().next().addClass("hide");
         randomName();
         $("#btnStart").text("停止");
         $("#bgLuckyDrawEnd").removeClass("bg");
+        console.log('draw it...');
+        var classactive = $('.active');
+        var pid = classactive.attr('pid');//works
         
+        drawWinner(pid);
         // var activeproduct =  $('div.active').getAttribute('pid');
         console.log('drawit attr:%s',pid);
         // drawWinner()

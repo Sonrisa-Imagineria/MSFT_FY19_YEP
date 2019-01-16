@@ -201,11 +201,10 @@ $(document).ready(function() {
         var pid = classactive.attr('pid');//works
         
         drawWinner(pid);
-        // var activeproduct =  $('div.active').getAttribute('pid');
         console.log('drawit attr:%s',pid);
         // drawWinner()
-        $("#result").fadeOut();
-        $("#luckyDrawing").show().next().addClass("hide");
+        // $("#result").fadeOut();
+        $("#luckyDrawing").show();
         randomName();
         setTimeout(function(){
             clearInterval(timer);

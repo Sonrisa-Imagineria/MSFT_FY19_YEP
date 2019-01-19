@@ -161,17 +161,19 @@ body {
     overflow: hidden;
     color: white;
     text-align: center;
+    background-size: cover;
 }
 
 body > div {
     /* background: url(img/bg.png) no-repeat; */
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
     top: 50%;
     left: 50%;
     margin: -300px auto auto -400px;
     width: 800px;
     height: 600px;
-    overflow: scroll;
+
 }
 
 body > div > header {
@@ -356,3 +358,7 @@ body > div > footer > div > button#btnReset {
     height: 85%;
     width: 85%;
 }
+
+.center {
+    background-size: cover;
+  }

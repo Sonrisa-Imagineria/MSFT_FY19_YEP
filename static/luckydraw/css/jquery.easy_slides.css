@@ -160,7 +160,8 @@
     position: relative;
     width: 70vw;
     /* 640px; */
-    height: 53.2vw;
+    /* height: 53.2vw; */
+    height: 530px;
     margin: 0 auto;
     margin-top: -15%;
     /* margin-bottom: -5%; */
@@ -196,7 +197,7 @@
 
 .slider_circle_10 .prev1,
 .slider_circle_10 .next1 {
-    opacity: 0.9;
+    opacity: 0.15;
     position: absolute;
     top: 60%;
     left: 50%;

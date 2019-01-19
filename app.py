@@ -60,6 +60,20 @@ def luckyDraw():
 @app.route("/luckydrawtest")
 def luckyDrawtest():
     return render_template("luckydraw_test.html")
+
+@app.route("/luckydraw/phase1")
+def luckyDraw1():
+    return render_template("luckydraw_1.html")
+@app.route("/luckydraw/phase2")
+def luckyDraw2():
+    return render_template("luckydraw_2.html")
+@app.route("/luckydraw/phase3")
+def luckyDraw3():
+    return render_template("luckydraw_3.html")
+@app.route("/luckydraw/phase4")
+def luckyDraw4():
+    return render_template("luckydraw_4.html")
+
 @app.route("/luckydraw/data",methods=['GET','PUT'])
 def dbData():
     if request.method == 'GET':

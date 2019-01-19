@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MSFT抽獎囉！</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/static/luckydraw/js/lib/common.js"></script>
+    <script src="/static/luckydraw/js/lib/lib.js"></script>
+    <!-- TEST EASY SLIDES -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="{{ url_for('static', filename='luckydraw/css/jquery.easy_slides.css') }}" rel="stylesheet" type="text/css" />
+    <script src="/static/luckydraw/js/lib/jquery.easy_slides.js"></script>
+
+</head>
+<body style="background-image: url(/static/images/Microsoft.jpg); background-size: contain">
+    <div class="container-fluid" style="margin-left: 3%">
+        <div class="container-fluid" style="margin-top: -10%">
+            <div class="container-fluid" style="margin-top: -10%">
+                <div class="slider slider_circle_10">
+                    <div style="background-image: url(/static/images/5000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize31"></div>
+                    <div style="background-image: url(/static/images/5000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize32"></div>
+                    <div style="background-image: url(/static/images/iRobot.jpg); background-size: 100% 100%; margin-top:5%" pid="prize33"></div>
+                    <div style="background-image: url(/static/images/Panasonic_2.jpg); background-size: 100% 100%; margin-top:5%" pid="prize34"></div>
+                    <div style="background-image: url(/static/images/GoPro.jpg); background-size: 100% 100%; margin-top:5%" pid="prize35"></div>
+                    <div style="background-image: url(/static/images/10000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize36"></div>
+                    <div style="background-image: url(/static/images/20000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize37"></div>
+                    <!-- <div class="next_button"></div>
+                    <div class="prev_button"></div> -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="z-index: 5">
+            <div class="draw-panel">
+                <div class="hide row justify-content-center" id="luckyDrawing"><input id="showName" readonly type="text"></div>
+                <div class="row justify-content-center">
+                    <button type="button" id="drawit" class="btn btn-info">抽獎！</button>
+                    <button type="button" class="btn btn-info">再抽一次</button>
+            </div>
+        </div>
+        <div class="lucky-card" style="padding-left: 8%">
+            <div class="py-5 pl-5">
+                <div class="container">
+                    <div class="row hidden-md-up">
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner1">
+                            <!-- <img class="card-bg" src="{{ url_for('static', filename='images/absent.jpg') }}"> -->
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner2">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner3">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner4"> 
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner5">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    </div><br>
+                    <div class="row">
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner6">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner7">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner8">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner9">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="card">
+                        <div class="card-block" id="winner10">
+                            <h4 class="card-title">Name</h4>
+                            <h6 class="card-subtitle text-muted">alias</h6>
+                            <p class="card-text p-y-1">dept</p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+    </div>
+</html>

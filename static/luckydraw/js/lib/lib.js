@@ -210,8 +210,8 @@ function randomName(){
     var $showName = $("#showName"); //显示内容的input的ID
     var interTime = 30;//设置间隔时间
     timer = setInterval(function () {
-        var i = GetRandomNum(0, remainPerson.length);
-        $showName.val(remainPerson[i]);//输入框赋值
+        var i = GetRandomNum(0, candidates.length);
+        $showName.val(candidates[i]);//输入框赋值
     }, interTime);
 }
 $(document).ready(function() {

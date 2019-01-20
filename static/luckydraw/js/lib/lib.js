@@ -118,7 +118,7 @@ function updateWinnerPrizeToDb () {
     console.log("updateWinnerPrize2db:stringify="+JSON.stringify(winnerPrizeArr));
     $.ajax({
         url: AJAX_URL,
-        type: "PUT",
+        type: 'PUT',
         async: false,
         cache: false,
         data: JSON.stringify(winnerPrizeArr),
@@ -214,11 +214,15 @@ function randomName(){
         $showName.val(candidates[i]);//输入框赋值
     }, interTime);
 }
+
 $(document).ready(function() {
     $('.lucky-card').hide();
     $('.slider_circle_10').EasySlides({
         'autoplay': false,
-        'show': 3
+        'show': 3,
+        'beforeshow': function() {
+            
+        }
     })
     $('#drawit').on('click', function(){
         var classactive = $('.active');
@@ -244,7 +248,5 @@ $(document).ready(function() {
         }, 3000);
         console.log('draw it...');
     });
-
-    
 });
 

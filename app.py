@@ -76,6 +76,7 @@ def luckyDraw4():
 
 @app.route("/luckydraw/data",methods=['GET','PUT'])
 def dbData():
+    print('in dbdata...')
     if request.method == 'GET':
         resp = rdb.list()
         return resp

@@ -277,7 +277,7 @@ $(document).ready(function() {
                     $('#winner' + cardNum + ' .card-title').text(winner['name']);
                     $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
                     $('#winner' + cardNum + ' .card-text').text(winner['department']);
-                    $('#winner' + cardNum).fadeIn(2000);
+                    $('#winner' + cardNum).fadeIn(1000);
                 }
             }
         }
@@ -287,6 +287,7 @@ $(document).ready(function() {
         var classactive = $('.active');
         var pid = classactive.attr('pid');//works
         
+        $("#showName").show();
         drawWinner(pid);
         console.log('drawit attr:%s',pid);
         $("#luckyDrawing").show();
@@ -300,7 +301,7 @@ $(document).ready(function() {
             $('.card-block').hide();
             $('.lucky-card').show();
             for(var i = 0; i < winnerList.length; i++) {
-                $('#winner' + (i+1)).fadeIn(2000);
+                $('#winner' + (i+1)).fadeIn(1000);
             }
         }, 3000);
         console.log('draw it...');
@@ -317,9 +318,9 @@ $(document).ready(function() {
         $("#redrawit").show();
         var nextTextFieldId = $(this).parent().next().find('.card-block').attr("id");
         console.log('nextTextField:'+nextTextFieldId);
-        
-
-
     });
+    function absentfunc(id){
+        console.log('absent:'+id);
+    }
 });
 

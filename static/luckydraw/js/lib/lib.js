@@ -265,6 +265,9 @@ $(document).ready(function() {
             if (!NameCardRecord[prizeName]) {
                 $('.lucky-card').hide();
                 $('.draw-panel').show();
+                $("#redrawit").hide();
+                $("#showName").show();
+                $('#drawit').show();
             } else {
                 // show drawn winners on name cards
                 $('.draw-panel').hide();
@@ -317,6 +320,7 @@ $(document).ready(function() {
             $(this).removeClass('selected');
             $(this).children('img').hide();
         });
+        $('.draw-panel').hide();
     });
 
     //test card
@@ -326,11 +330,17 @@ $(document).ready(function() {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
             $(this).children('img').hide();
+            if ($('.selected').length == 0) {
+                $('.draw-panel').hide();
+            }
         } else {
             $(this).addClass('selected');
             $(this).children('img').show();   
+            $('.draw-panel').show();
+            $("#showName").show();
+            $('#drawit').hide();
+            $("#redrawit").show();
         }
-        $("#redrawit").show();
     });
 
 });

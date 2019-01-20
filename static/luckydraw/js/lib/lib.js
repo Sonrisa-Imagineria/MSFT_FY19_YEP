@@ -316,17 +316,19 @@ $(document).ready(function() {
 
     $('#redrawit').on('click', function(){
         console.log('in to #redrawit but.....');
-        $('.selected').each(function(){
-            var prizeId = $('.active').attr('pid');
-            var cardId = $(this).attr('id');
-            redrawWinner(prizeId, cardId);
-            console.log('in to redrawWinner .....');
-
-            // clear seleted and remove img
-            $(this).removeClass('selected');
-            $(this).prev('img.card-img-top').attr("src", "/static/images/absent.jpg");
-        });
-        $('.draw-panel').hide();
+        randomName();
+        setTimeout(function(){
+            $('.selected').each(function(){
+                var prizeId = $('.active').attr('pid');
+                var cardId = $(this).attr('id');
+                redrawWinner(prizeId, cardId);
+                console.log('in to redrawWinner .....');
+                // clear seleted and remove img
+                $(this).removeClass('selected');
+                $(this).prev('img.card-img-top').attr("src", "/static/images/white.jpg");
+            });
+            $('.draw-panel').hide();
+        }, 3000);
     });
 
     //test card

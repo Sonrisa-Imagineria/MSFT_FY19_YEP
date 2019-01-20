@@ -178,11 +178,13 @@ function drawWinner (prizeName) {
 }
 
 function redrawWinner (prizeName, cardId) {
+    console.log('in redrqwWinner function prize: '+prizeName+'....cardid: '+cardId);
     var absent = false;
     var redrawAlias = $('#' + cardId + ' .card-subtitle').text();
-
+    
     for (const winner of winnerPrizeArr) {
         if (winner["alias"] === redrawAlias) {
+            console.log('winner[alias]='+winner["alias"]+"...redrawalias="+redrawAlias);
             winner["isWinner"] = "absent";
             absent = true;
             break;
@@ -262,6 +264,8 @@ $(document).ready(function() {
             winnerList = [];
             winnerPrizeArr = [];
             
+            $('.selected').removeClass('selected');
+            $('img.card-img-top').attr("src", "/static/images/white.jpg");
             if (!NameCardRecord[prizeName]) {
                 $('.lucky-card').hide();
                 $('.draw-panel').show();
@@ -313,7 +317,7 @@ $(document).ready(function() {
     $('#redrawdit').on('click', function(){
         $('.selected').each(function(){
             var prizeId = $('.active').attr('pid');
-            var cardId = $(this).attr('id');            
+            var cardId = $(this).attr('id');
             redrawWinner(prizeId, cardId);
 
             // clear seleted and remove img

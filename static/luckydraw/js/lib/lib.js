@@ -305,10 +305,20 @@ $(document).ready(function() {
         }, 3000);
         console.log('draw it...');
     });
-
+    $(".drill_cursor").click(function(){
+//do something
+});
     $('#redrawdit').on('click', function(){
         // $('.selected').
         // redrawWinner();
     });
 });
+//test card
+$(".card").click(function(){
+    //do something
+    $("#redrawit").show();
+    var nextTextFieldId = $(this).parent().next().find('.card-block').attr("id");
+    console.log('nextTextField:'+nextTextFieldId);
 
+
+});

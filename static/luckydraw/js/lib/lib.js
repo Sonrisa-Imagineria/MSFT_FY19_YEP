@@ -178,7 +178,7 @@ function drawWinner (prizeName) {
 }
 
 function redrawWinner (prizeName, cardId) {
-    console.log('in redrqwWinner function prize: '+prizeName+'....cardid: '+cardId);
+    console.log('in redrqwWinner function prize='+prizeName+'....cardid='+cardId);
     var absent = false;
     var redrawAlias = $('#' + cardId + ' .card-subtitle').text();
     
@@ -315,10 +315,12 @@ $(document).ready(function() {
     });
 
     $('#redrawdit').on('click', function(){
+        console.log('in to #redrawit but.....');
         $('.selected').each(function(){
             var prizeId = $('.active').attr('pid');
             var cardId = $(this).attr('id');
             redrawWinner(prizeId, cardId);
+            console.log('in to redrawWinner .....');
 
             // clear seleted and remove img
             $(this).removeClass('selected');

@@ -254,7 +254,7 @@ $(document).ready(function() {
                 $('#winner' + cardNum + ' .card-title').text('');
                 $('#winner' + cardNum + ' .card-subtitle').text('');
                 $('#winner' + cardNum + ' .card-text').text('');
-                $('#winner' + cardNum).fadeOut();
+                $('#winner' + cardNum).parent('.card').fadeOut();
             }
         },
         'aftershow': function() {
@@ -271,7 +271,7 @@ $(document).ready(function() {
             } else {
                 // show drawn winners on name cards
                 $('.draw-panel').hide();
-                $('.card-img-overlay').hide();
+                $('.card').hide();
                 $('.lucky-card').show();
                 var winnerInfo = NameCardRecord[prizeName];
                 for(var i = 0; i < winnerInfo.length; i++) {
@@ -280,7 +280,7 @@ $(document).ready(function() {
                     $('#winner' + cardNum + ' .card-title').text(winner['name']);
                     $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
                     $('#winner' + cardNum + ' .card-text').text(winner['department']);
-                    $('#winner' + cardNum).fadeIn(1000);
+                    $('#winner' + cardNum).parent('.card').fadeIn(1000);
                 }
             }
         }
@@ -301,10 +301,10 @@ $(document).ready(function() {
             $("#showName").hide();
             $('.draw-panel').hide();
             // show name cards
-            $('.card-img-overlay').hide();
+            $('.card').hide();
             $('.lucky-card').show();
             for(var i = 0; i < winnerList.length; i++) {
-                $('#winner' + (i+1)).fadeIn(1000);
+                $('#winner' + (i+1)).parent('.card').fadeIn(1000);
             }
         }, 3000);
         console.log('draw it...');

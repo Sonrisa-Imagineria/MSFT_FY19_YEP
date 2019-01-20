@@ -158,7 +158,7 @@ function drawWinner (prizeName) {
     // finish updating winners to winner card
     for(var i = 0; i < winnerList.length; i++) {
         winner = getMember(winnerList[i]);
-        var cardNum = i+1;
+        var cardNum = i + 1;
         $('#winner' + cardNum + ' .card-title').text(winner['name']);
         $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
         $('#winner' + cardNum + ' .card-text').text(winner['department']);
@@ -235,9 +235,12 @@ $(document).ready(function() {
             clearInterval(timer);
             $("#showName").hide();
             $('.draw-panel').hide();
+            // show name cards
+            $('.card-block').hide();
             $('.lucky-card').show();
-            //#luckyDrawing should show
-
+            for(var i = 0; i < winnerList.length; i++) {
+                $('#winner' + (i+1)).fadeIn("slow");
+            }
         }, 3000);
         console.log('draw it...');
     });

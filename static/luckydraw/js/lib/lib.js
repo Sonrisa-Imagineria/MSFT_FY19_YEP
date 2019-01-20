@@ -329,13 +329,13 @@ $(document).ready(function() {
         console.log(' $.card-img-overlay).click(function(){:');
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
-            $(this).prev('img.card-img-top').attr("src", "/static/images/absent.jpg");
+            $(this).prev('img.card-img-top').attr("src", "/static/images/white.jpg");
             if ($('.selected').length == 0) {
                 $('.draw-panel').hide();
             }
         } else {
             $(this).addClass('selected');
-            $(this).prev('img.card-img-top').attr("src", "/static/images/white.jpg");
+            $(this).prev('img.card-img-top').attr("src", "/static/images/absent.jpg");
             $('.draw-panel').show();
             $("#showName").show();
             $('#drawit').hide();

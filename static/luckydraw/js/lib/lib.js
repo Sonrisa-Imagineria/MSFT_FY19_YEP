@@ -229,7 +229,7 @@ $(document).ready(function() {
         'show': 3,
         'beforeshow': function() {
             // reset everything before rotating to next prize
-            var prizeName = classactive.attr('pid'); // get current prize name
+            var prizeName = $('.active').attr('pid'); // get current prize name
 
             // keep current winners and clear name cards
             for(var i = 0; i < 10; i++) {
@@ -253,10 +253,10 @@ $(document).ready(function() {
         'aftershow': function() {
             winnerList = [];
             winnerPrizeArr = [];
-            if (winnerList.length) {
+            // if () {
                 $('.lucky-card').hide();
                 $('.draw-panel').show();
-            }
+            // }
         }
     })
     $('#drawit').on('click', function(){

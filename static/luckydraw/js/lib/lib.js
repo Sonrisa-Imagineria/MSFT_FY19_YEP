@@ -179,7 +179,7 @@ function drawWinner (prizeName) {
 
 function redrawWinner (prizeName, cardId) {
     var absent = false;
-    var redrawAlias = $(cardId + ' .card-subtitle').text();
+    var redrawAlias = $('#' + cardId + ' .card-subtitle').text();
 
     for (const winner of winnerPrizeArr) {
         if (winner["alias"] === redrawAlias) {
@@ -214,9 +214,9 @@ function redrawWinner (prizeName, cardId) {
 
     // finish updating re-drawn winner to the name card
     var winner = getMember(winnerList[0]);
-    $(cardId + ' .card-title').text(winner['name']);
-    $(cardId + ' .card-subtitle').text(winner['alias']);
-    $(cardId + ' .card-text').text(winner['department']);
+    $('#' + cardId + ' .card-title').text(winner['name']);
+    $('#' + cardId + ' .card-subtitle').text(winner['alias']);
+    $('#' + cardId + ' .card-text').text(winner['department']);
 }
 
 function randomName(){

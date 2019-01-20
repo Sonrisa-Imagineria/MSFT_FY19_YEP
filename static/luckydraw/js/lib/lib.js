@@ -177,9 +177,9 @@ function drawWinner (prizeName) {
     return winnerList;
 }
 
-function redrawWinner (prizeName, cardNum) {
+function redrawWinner (prizeName, cardId) {
     var absent = false;
-    var redrawAlias = $('#winner' + cardNum + ' .card-subtitle').text();
+    var redrawAlias = $(cardId + ' .card-subtitle').text();
 
     for (const winner of winnerPrizeArr) {
         if (winner["alias"] === redrawAlias) {
@@ -214,9 +214,9 @@ function redrawWinner (prizeName, cardNum) {
 
     // finish updating re-drawn winner to the name card
     var winner = getMember(winnerList[0]);
-    $('#winner' + cardNum + ' .card-title').text(winner['name']);
-    $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
-    $('#winner' + cardNum + ' .card-text').text(winner['department']);
+    $(cardId + ' .card-title').text(winner['name']);
+    $(cardId + ' .card-subtitle').text(winner['alias']);
+    $(cardId + ' .card-text').text(winner['department']);
 }
 
 function randomName(){
@@ -309,16 +309,27 @@ $(document).ready(function() {
 
     $('#redrawdit').on('click', function(){
         $('.selected').each(function(){
-            
-            redrawWinner();
+            var prizeId = $('.active').attr('pid');
+            var cardId = $(this).attr('id');            
+            redrawWinner(prizeId, cardId);
+
+            // clear seleted and remove img
+            $(this).removeClass('selected');
+            $(this).children('img').hide();
         });
     });
 
     //test card
-    $(".card-block").click(function(){
+    $(".card-block").on('click', function(){
         //do something
         console.log(' $.card-block).click(function(){:');
-        $(this).addClass('selected');
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            $(this).children('img').hide();
+        } else {
+            $(this).addClass('selected');
+            $(this).children('img').show();   
+        }
         $("#redrawit").show();
     });
 

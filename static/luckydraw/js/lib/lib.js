@@ -163,9 +163,9 @@ function drawWinner (prizeName) {
         return;
     }
     
-    // finish updating winners to winner card
+    // finish updating winners to name cards
     for(var i = 0; i < winnerList.length; i++) {
-        winner = getMember(winnerList[i]);
+        var winner = getMember(winnerList[i]);
         var cardNum = i + 1;
         $('#winner' + cardNum + ' .card-title').text(winner['name']);
         $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
@@ -177,8 +177,9 @@ function drawWinner (prizeName) {
     return winnerList;
 }
 
-function redrawWinner (prizeName, redrawAlias) {
+function redrawWinner (prizeName, cardNum) {
     var absent = false;
+    var redrawAlias = $('#winner' + cardNum + ' .card-subtitle').text();
 
     for (const winner of winnerPrizeArr) {
         if (winner["alias"] === redrawAlias) {
@@ -210,6 +211,12 @@ function redrawWinner (prizeName, redrawAlias) {
         console.log("Failed to update redraw winner to db");
         return;
     }
+
+    // finish updating re-drawn winner to the name card
+    var winner = getMember(winnerList[0]);
+    $('#winner' + cardNum + ' .card-title').text(winner['name']);
+    $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
+    $('#winner' + cardNum + ' .card-text').text(winner['department']);
 }
 
 function randomName(){
@@ -251,22 +258,37 @@ $(document).ready(function() {
             }
         },
         'aftershow': function() {
+            var prizeName = $('.active').attr('pid'); // get current prize name
             winnerList = [];
             winnerPrizeArr = [];
-            // if () {
+            
+            if (!NameCardRecord[prizeName]) {
                 $('.lucky-card').hide();
                 $('.draw-panel').show();
-            // }
+            } else {
+                // show drawn winners on name cards
+                $('.draw-panel').hide();
+                $('.card-block').hide();
+                $('.lucky-card').show();
+                var winnerInfo = NameCardRecord[prizeName];
+                for(var i = 0; i < winnerInfo.length; i++) {
+                    var winner = winnerInfo[i];
+                    var cardNum = i + 1;
+                    $('#winner' + cardNum + ' .card-title').text(winner['name']);
+                    $('#winner' + cardNum + ' .card-subtitle').text(winner['alias']);
+                    $('#winner' + cardNum + ' .card-text').text(winner['department']);
+                    $('#winner' + cardNum).fadeIn(2000);
+                }
+            }
         }
-    })
+    });
+
     $('#drawit').on('click', function(){
         var classactive = $('.active');
         var pid = classactive.attr('pid');//works
         
         drawWinner(pid);
         console.log('drawit attr:%s',pid);
-        // drawWinner()
-        // $("#result").fadeOut();
         $("#luckyDrawing").show();
         //should be hidden
         randomName();
@@ -278,10 +300,15 @@ $(document).ready(function() {
             $('.card-block').hide();
             $('.lucky-card').show();
             for(var i = 0; i < winnerList.length; i++) {
-                $('#winner' + (i+1)).fadeIn("slow");
+                $('#winner' + (i+1)).fadeIn(2000);
             }
         }, 3000);
         console.log('draw it...');
+    });
+
+    $('#redrawdit').on('click', function(){
+        // $('.selected').
+        // redrawWinner();
     });
 });
 

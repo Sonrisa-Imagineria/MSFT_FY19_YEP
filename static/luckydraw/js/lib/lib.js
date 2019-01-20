@@ -221,7 +221,9 @@ $(document).ready(function() {
         'autoplay': false,
         'show': 3,
         'beforeshow': function() {
+            // reset everything before rotating to next prize
             
+            // keep current winner name cards?            
         }
     })
     $('#drawit').on('click', function(){

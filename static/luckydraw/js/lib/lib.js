@@ -314,7 +314,7 @@ $(document).ready(function() {
         console.log('draw it...');
     });
 
-    $('#redrawdit').on('click', function(){
+    $('#redrawit').on('click', function(){
         console.log('in to #redrawit but.....');
         $('.selected').each(function(){
             var prizeId = $('.active').attr('pid');

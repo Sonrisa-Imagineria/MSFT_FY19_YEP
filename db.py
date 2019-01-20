@@ -119,7 +119,7 @@ class RegisterDB(DB):
 		return testList
 	def updateDB(self,alias,isWinner):
 		try:
-			self.coll_luckydraw.update({'alias':alias},{'$set':{'isWinner':isWinner}})
+			self.coll_luckydraw.update({'alias2':alias},{'$set':{'isWinner':isWinner}})
 			print('success in updating')
 		except Exception as e:
 			print('fail in updating'+str(e))

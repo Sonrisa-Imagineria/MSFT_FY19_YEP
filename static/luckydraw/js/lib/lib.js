@@ -271,7 +271,7 @@ $(document).ready(function() {
             } else {
                 // show drawn winners on name cards
                 $('.draw-panel').hide();
-                $('.card-block').hide();
+                $('.card-img-overlay').hide();
                 $('.lucky-card').show();
                 var winnerInfo = NameCardRecord[prizeName];
                 for(var i = 0; i < winnerInfo.length; i++) {
@@ -301,7 +301,7 @@ $(document).ready(function() {
             $("#showName").hide();
             $('.draw-panel').hide();
             // show name cards
-            $('.card-block').hide();
+            $('.card-img-overlay').hide();
             $('.lucky-card').show();
             for(var i = 0; i < winnerList.length; i++) {
                 $('#winner' + (i+1)).fadeIn(1000);
@@ -318,24 +318,24 @@ $(document).ready(function() {
 
             // clear seleted and remove img
             $(this).removeClass('selected');
-            $(this).children('img').hide();
+            $(this).prev('img').hide();
         });
         $('.draw-panel').hide();
     });
 
     //test card
-    $(".card-block").on('click', function(){
+    $(".card-img-overlay").on('click', function(){
         //do something
-        console.log(' $.card-block).click(function(){:');
+        console.log(' $.card-img-overlay).click(function(){:');
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
-            $(this).children('img').hide();
+            $(this).prev('img').hide();
             if ($('.selected').length == 0) {
                 $('.draw-panel').hide();
             }
         } else {
             $(this).addClass('selected');
-            $(this).children('img').show();   
+            $(this).prev('img').show();   
             $('.draw-panel').show();
             $("#showName").show();
             $('#drawit').hide();

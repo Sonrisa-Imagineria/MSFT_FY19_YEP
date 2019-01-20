@@ -229,9 +229,7 @@ function randomName(){
         $showName.val(candidates[i]);//输入框赋值
     }, interTime);
 }
-function absentfunc(id){
-    console.log('absent:'+id);
-}
+
 $(document).ready(function() {
     $('.slider_circle_10').EasySlides({
         'autoplay': false,
@@ -310,16 +308,18 @@ $(document).ready(function() {
     });
 
     $('#redrawdit').on('click', function(){
-        // $('.selected').
-        // redrawWinner();
+        $('.selected').each(function(){
+            
+            redrawWinner();
+        });
     });
 
     //test card
-    $(".card").click(function(){
+    $(".card-block").click(function(){
         //do something
+        console.log(' $.card-block).click(function(){:');
+        $(this).addClass('selected');
         $("#redrawit").show();
-        var nextTextFieldId = $(this).parent().next().find('.card-block').attr("id");
-        console.log('nextTextField:'+nextTextFieldId);
     });
 
 });

@@ -335,7 +335,8 @@ $(document).ready(function() {
             }
         } else {
             $(this).addClass('selected');
-            $(this).children('img').show();   
+            $(this).children('.card-block').
+            // $(this).children('img').show();   
             $('.draw-panel').show();
             $("#showName").show();
             $('#drawit').hide();

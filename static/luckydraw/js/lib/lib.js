@@ -318,7 +318,7 @@ $(document).ready(function() {
 
             // clear seleted and remove img
             $(this).removeClass('selected');
-            $(this).prev('img').hide();
+            $(this).prev('img').attr('src', '/static/images/absent.jpg');
         });
         $('.draw-panel').hide();
     });
@@ -329,13 +329,13 @@ $(document).ready(function() {
         console.log(' $.card-img-overlay).click(function(){:');
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
-            $(this).prev('img').hide();
+            $(this).prev('img').attr('src', '/static/images/absent.jpg');
             if ($('.selected').length == 0) {
                 $('.draw-panel').hide();
             }
         } else {
             $(this).addClass('selected');
-            $(this).prev('img').show();   
+            $(this).prev('img').attr('src', '/static/images/white.jpg');
             $('.draw-panel').show();
             $("#showName").show();
             $('#drawit').hide();

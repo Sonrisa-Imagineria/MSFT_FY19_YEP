@@ -16,7 +16,7 @@
 <body style="background-image: url(/static/images/Microsoft.jpg); background-size: 100% auto; background-repeat: no-repeat">
     <div class="container-fluid" style="margin-left: 3%">
         <div class="container-fluid" style="margin-top: -10%;">
-            <div style="margin:0 auto;" class="slider slider_circle_10">
+            <div style="margin:0 auto; margin-top:5%" class="slider slider_circle_10">
                 <div style="background-image: url(/static/images/3000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize11"></div>
                 <div style="background-image: url(/static/images/3000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize12"></div>
                 <div style="background-image: url(/static/images/Panasonic.jpg); background-size: 100% 100%; margin-top:5%" pid="prize13"></div>
@@ -27,11 +27,15 @@
 
         <div class="container-fluid" style="z-index: 5">
             <div class="draw-panel">
-                <div class="row justify-content-center" id="luckyDrawing"><input id="showName" readonly type="text" style="text-align: center; display: none;"></div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" id="luckyDrawing">
+                    <input id="showName" readonly type="text" style="text-align: center; display: none;">
                     <button type="button" id="drawit" class="btn btn-info">抽獎！</button>
                     <button type="button" id="redrawit" class="btn btn-info" style="display:none">再抽一次</button>
                 </div>
+                <!-- <div class="row justify-content-center">
+                    <button type="button" id="drawit" class="btn btn-info">抽獎！</button>
+                    <button type="button" id="redrawit" class="btn btn-info" style="display:none">再抽一次</button>
+                </div> -->
             </div>
             <div class="lucky-card" style="padding-left: 8%; display: none;">
                 <div class="py-0 pl-5">

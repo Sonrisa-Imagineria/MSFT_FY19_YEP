@@ -13,126 +13,141 @@
     <script src="/static/luckydraw/js/lib/jquery.easy_slides.js"></script>
 
 </head>
-<body style="background-image: url(/static/images/Microsoft.jpg); background-size: contain">
+<body style="background-image: url(/static/images/Microsoft.jpg); background-size: 100% auto; background-repeat: no-repeat">
     <div class="container-fluid" style="margin-left: 3%">
-        <div class="container-fluid" style="margin-top: -10%">
-            <div style="margin:0 auto;" class="slider slider_circle_10">
+        <div class="container-fluid" style="margin-top: -10%;">
+            <div style="margin:0 auto; margin-top:5%" class="slider slider_circle_10">
                 <div style="background-image: url(/static/images/3000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize21"></div>
                 <div style="background-image: url(/static/images/3000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize22"></div>
                 <div style="background-image: url(/static/images/3000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize23"></div>
                 <div style="background-image: url(/static/images/5000.jpg); background-size: 100% 100%; margin-top:5%" pid="prize24"></div>
-                <div style="background-image: url(/static/images/Gtech.jpg); background-size: 100% 100%l margin-top:5%" pid="prize25"></div>
+                <div style="background-image: url(/static/images/Gtech.jpg); background-size: 100% 100%; margin-top:5%" pid="prize25"></div>
             </div>
         </div>
+
         <div class="container-fluid" style="z-index: 5">
             <div class="draw-panel">
-                <div class="hide row justify-content-center" id="luckyDrawing"><input id="showName" readonly type="text"></div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center" id="luckyDrawing">
+                    <input id="showName" readonly type="text" style="text-align: center; display: none;">
+                    <button type="button" id="drawit" class="btn btn-info" style="margin-left:1%">抽獎！</button>
+                    <button type="button" id="redrawit" class="btn btn-info" style="display:none;margin-left:1%">再抽一次</button>
+                    <br/>
+                </div>
+                <!-- <div class="row justify-content-center">
                     <button type="button" id="drawit" class="btn btn-info">抽獎！</button>
-                    <button type="button" class="btn btn-info">再抽一次</button>
+                    <button type="button" id="redrawit" class="btn btn-info" style="display:none">再抽一次</button>
+                </div> -->
             </div>
-        </div>
-        <div class="lucky-card" style="padding-left: 8%">
-            <div class="py-5 pl-5">
-                <div class="container">
-                    <div class="row hidden-md-up">
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner1">
-                            <!-- <img class="card-bg" src="{{ url_for('static', filename='images/absent.jpg') }}"> -->
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
+            <div class="lucky-card" style="padding-left: 8%; margin-top:2%; display: none;">
+                <div class="py-0 pl-5">
+                    <div class="container">
+                        <div class="row hidden-md-up">
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner1" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner2" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner3" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner4" style="padding: 0;"> 
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner5" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        </div><br>
+                        <div class="row">
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner6" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner7" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner8" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner9" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="card" style="border: 0px">
+                            <img class="card-img-top" src="{{ url_for('static', filename='images/white.jpg') }}" style="width: 55%; margin-left: 22%">
+                            <div class="card-img-overlay" id="winner10" style="padding: 0;">
+                                <p style="text-align: center;" class="card-title"></p>
+                                <p style="text-align: center;" class="card-subtitle text-muted"></p>
+                                <p style="text-align: center;" class="card-text p-y-1"></p>
+                            </div>
+                            </div>
                         </div>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner2">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner3">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner4"> 
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner5">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    </div><br>
-                    <div class="row">
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner6">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner7">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner8">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner9">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="card">
-                        <div class="card-block" id="winner10">
-                            <h4 class="card-title">Name</h4>
-                            <h6 class="card-subtitle text-muted">alias</h6>
-                            <p class="card-text p-y-1">dept</p>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     
     </div>

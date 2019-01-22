@@ -73,7 +73,10 @@ def luckyDraw3():
 @app.route("/luckydraw/phase4")
 def luckyDraw4():
     return render_template("luckydraw_4.html")
-
+@app.route("/luckydraw/phaseadd")
+def luckyDrawAdd():
+    return render_template("luckydraw_add.html")
+    
 @app.route("/luckydraw/data",methods=['GET','PUT'])
 def dbData():
     print('in dbdata...')

@@ -30,7 +30,9 @@ var PrizeNumMapping = {
     "prize46" : 1,
     "prize47" : 5,
     "prize48" : 5,
-    "prize49" : 1
+    "prize49" : 1,
+    "prizea1" : 10,
+    "prizea2" : 1
 };
 var NameCardRecord = {}; 
 // NameCardRecord used to record name card of drawn prizes
@@ -333,6 +335,30 @@ $(document).ready(function() {
         }, 3000);
     });
 
+    $('#drawit_add').on('click', function(){
+        var classactive = $('.active');
+        var pid = classactive.attr('pid');//works
+        classactive.attr('style','background-image:"background-image: url(/static/images/10000.jpg);')
+
+        $("#showName").show();
+        drawWinner(pid);
+        console.log('drawit attr:%s',pid);
+        $("#luckyDrawing").show();
+        //should be hidden
+        randomName();
+        setTimeout(function(){
+            clearInterval(timer);
+            $("#showName").hide();
+            $('.draw-panel').hide();
+            // show name cards
+            $('.card').hide();
+            $('.lucky-card').show();
+            for(var i = 0; i < winnerList.length; i++) {
+                $('#winner' + (i+1)).parent('.card').fadeIn(1000);
+            }
+        }, 3000);
+        console.log('draw it...');
+    });
     //test card
     $(".card-img-overlay").on('click', function(){
         //do something

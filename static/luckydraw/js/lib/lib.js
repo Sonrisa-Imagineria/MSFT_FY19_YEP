@@ -318,6 +318,8 @@ $(document).ready(function() {
         randomName();
         $("#showName").show();
         setTimeout(function(){
+            clearInterval(timer);
+            $("#showName").hide();
             $('.selected').each(function(){
                 var prizeId = $('.active').attr('pid');
                 var cardId = $(this).attr('id');

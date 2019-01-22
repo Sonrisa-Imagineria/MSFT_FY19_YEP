@@ -341,7 +341,7 @@ $(document).ready(function() {
         var classactive = $('.active');
         console.log("classactive is:"+classactive);
         var pid = classactive.attr('pid');//works
-        classactive.attr('style','background-image: url(/static/images/10000.jpg);')
+        classactive.attr('style','background-image: url(/static/images/10000.jpg);background-size: 100% 100%; margin-top:5%')
         console.log("classactive attr is:"+classactive);
         $("#showName").show();
         drawWinner(pid);

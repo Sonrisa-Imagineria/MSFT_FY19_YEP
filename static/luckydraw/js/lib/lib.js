@@ -318,6 +318,7 @@ $(document).ready(function() {
     $('#redrawit').on('click', function(){
         console.log('in to #redrawit but.....');
         randomName();
+        
         $("#showName").show();
         setTimeout(function(){
             clearInterval(timer);
@@ -352,6 +353,9 @@ $(document).ready(function() {
             clearInterval(timer);
             $("#showName").hide();
             $('.draw-panel').hide();
+            $("#input_num").hide();
+            $("#input_prize").hide();
+           
             // show name cards
             $('.card').hide();
             $('.lucky-card').show();

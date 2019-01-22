@@ -223,7 +223,6 @@ function redrawWinner (prizeName, cardId) {
 
 function randomName(){
     console.log("randomName......");
-    $("#showName").show();
     var $showName = $("#showName"); //显示内容的input的ID
     var interTime = 30;//设置间隔时间
     timer = setInterval(function () {
@@ -317,6 +316,7 @@ $(document).ready(function() {
     $('#redrawit').on('click', function(){
         console.log('in to #redrawit but.....');
         randomName();
+        $("#showName").show();
         setTimeout(function(){
             $('.selected').each(function(){
                 var prizeId = $('.active').attr('pid');

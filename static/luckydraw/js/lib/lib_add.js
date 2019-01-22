@@ -246,7 +246,7 @@ $(document).ready(function() {
                 $('.draw-panel').show();
                 $("#redrawit").hide();
                 $("#showName").show();
-                $('#drawit').show();
+                $('#drawit_add').show();
                 $("#input_num").show();
                 $("#input_prize").show();
             } else {

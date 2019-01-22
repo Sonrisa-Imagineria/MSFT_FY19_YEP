@@ -315,7 +315,7 @@ $(document).ready(function() {
     $('#drawit_add').on('click', function(){
         var classactive = $('.active');
         var pid = classactive.attr('pid');//works
-        if($("#input_prize")=="10000"){
+        if($("#input_prize").val() == "10000"){
             classactive.attr('style','background-image: url(/static/images/10000.jpg);background-size: 100% 100%; margin-top:5%');
         }else{
             classactive.attr('style','background-image: url(/static/images/100000.jpg);background-size: 100% 100%; margin-top:5%');

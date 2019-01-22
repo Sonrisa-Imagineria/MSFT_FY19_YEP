@@ -5,32 +5,6 @@ var candidates = [];
 var winnerList = [];
 var winnerPrizeArr = [];
 var PrizeNumMapping = {
-    "prize11" : 10,
-    "prize12" : 10,
-    "prize13" : 5,
-    "prize14" : 6,
-    "prize15" : 2,
-    "prize21" : 10,
-    "prize22" : 10,
-    "prize23" : 10,
-    "prize24" : 10,
-    "prize25" : 5,
-    "prize31" : 10,
-    "prize32" : 10,
-    "prize33" : 6,
-    "prize34" : 2,
-    "prize35" : 2,
-    "prize36" : 10,
-    "prize37" : 5,
-    "prize41" : 10,
-    "prize42" : 10,
-    "prize43" : 5,
-    "prize44" : 2,
-    "prize45" : 2,
-    "prize46" : 1,
-    "prize47" : 5,
-    "prize48" : 5,
-    "prize49" : 1,
     "prizea1" : 10,
     "prizea2" : 1
 };
@@ -273,6 +247,8 @@ $(document).ready(function() {
                 $("#redrawit").hide();
                 $("#showName").show();
                 $('#drawit').show();
+                $("#input_num").show();
+                $("#input_prize").show();
             } else {
                 // show drawn winners on name cards
                 $('.draw-panel').hide();
@@ -336,6 +312,29 @@ $(document).ready(function() {
         }, 3000);
     });
 
+    $('#drawit_add').on('click', function(){
+        var classactive = $('.active');
+        var pid = classactive.attr('pid');//works
+        classactive.attr('style','background-image: url(/static/images/10000.jpg);background-size: 100% 100%; margin-top:5%')
+        $("#showName").show();
+        drawWinner(pid);
+        $("#luckyDrawing").show();
+        randomName();
+        setTimeout(function(){
+            clearInterval(timer);
+            $("#showName").hide();
+            $('.draw-panel').hide();
+            $("#input_num").hide();
+            $("#input_prize").hide();
+           
+            // show name cards
+            $('.card').hide();
+            $('.lucky-card').show();
+            for(var i = 0; i < winnerList.length; i++) {
+                $('#winner' + (i+1)).parent('.card').fadeIn(1000);
+            }
+        }, 3000);
+    });
     //test card
     $(".card-img-overlay").on('click', function(){
         //do something
@@ -351,7 +350,7 @@ $(document).ready(function() {
             $(this).prev('img.card-img-top').attr("src", "/static/images/absent.jpg");
             $('.draw-panel').show();
             $("#showName").show();
-            $('#drawit').hide();
+            $('#drawit_add').hide();
             $("#redrawit").show();
         }
     });

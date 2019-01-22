@@ -336,10 +336,12 @@ $(document).ready(function() {
     });
 
     $('#drawit_add').on('click', function(){
+        console.log("....drawit_add");
         var classactive = $('.active');
+        console.log("classactive is:"+classactive);
         var pid = classactive.attr('pid');//works
         classactive.attr('style','background-image:"background-image: url(/static/images/10000.jpg);')
-
+        console.log("classactive attr is:"+classactive);
         $("#showName").show();
         drawWinner(pid);
         console.log('drawit attr:%s',pid);
